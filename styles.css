@@ -13,11 +13,10 @@ body {
 	border: 0;
 }
 
-#logo-image {
-  background: url("../images/logo.png") no-repeat;
-  width: 150px;
-  height: 150px;
+#logo-img {
+  background: url('images/logo.png') no-repeat;
+  width: 120px;
+  height: 120px;
   margin: 10px 15px 10px 0;
- }
-
+ 
 }
