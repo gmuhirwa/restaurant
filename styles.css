@@ -56,8 +56,12 @@ body {
 
 .navbar-brand p span {
 	vertical-align: middle;
+	padding-right: 10px;
 }
 
+.kosher {
+	right: 5px;
+}
 #pull-left {
   top: 10px;
 }
