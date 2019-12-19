@@ -5,3 +5,12 @@ body {
 	background-color: #61122f;
 	font-family: "Oxygen", sans-serif;
 }
+
+/* The header :: The container is inside the Navigation Bar */
+#header-nav {
+	background-color: #f6b319;
+	border-radius: 0;
+	border: 0;
+   }
+
+}
