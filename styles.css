@@ -180,7 +180,7 @@ body {
 @media (min-width: 992px) and (max-width: 1199px) {
 	/* Header */
 	#logo-img {
-    background: url('images/logo.png') no-repeat;
+    background: url('images/resto_992.png') no-repeat;
     width: 70px;
     height: 70px;
     margin: 20px 15px 10px 0;
@@ -231,9 +231,6 @@ body {
         border: 2px solid #3F0C1F;
        
     }
-    /*#menu-tile, #specials-tile {
-    	width: 360px;
-    	margin: 0 auto 15px;
-    }*/
+    
 }
 
