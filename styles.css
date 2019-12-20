@@ -36,6 +36,7 @@ body {
 /*This is to remove the underlined feature*/
 .navbar-brand a:hover, .navbar-brand a:focus {
 	text-decoration: none;
+
 }
 
 /*The Logo image*/
@@ -60,6 +61,7 @@ body {
 .navbar-brand p span {
 	vertical-align: middle;
 	padding-right: 10px;
+	/*font-size: 25px;*/ /* can be used to change font-size */
 }
 
 .kosher {
@@ -123,11 +125,54 @@ body {
 }
 /*THE END O F THE H EADER*/
 
-/*********************** Large devices only **************/
-@media (min-width: 1200px) {
-
+#menu-tile, #specials-tile, #map-tile {
+	height: 250px;
+	width: 100%;
+	margin-bottom: 15px;
+	position: relative;
+	border: 2px solid #3F0C1F;
+	overflow: hidden;
 }
 
+#menu-tile {
+  background: url(images/menu.png) no-repeat;
+  background-position: center;
+}
+
+#specials-tile {
+  background: url(images/specials.png) no-repeat;
+  background-position: center;
+}
+
+#menu-tile span, #specials-tile span, #map-tile span  {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size:  1.6em;
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
+  opacity: .8;
+}
+
+#menu-tile:hover, #specials-tile:hover, #map-tile:hover {
+	box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+/****************   END OF HOME PAGE ******************/
+
+/*********************** Large devices only **************/
+@media (min-width: 1200px) {
+.jumbotron {
+  background: url('images/resto_1200.jpg') no-repeat; 
+  height: 675px;
+  box-shadow: 0 0 50px #3F0C1F;
+  border: 2px solid #3F0C1F;
+  padding-top: 0;
+  }
+}
 /*********************** Medium devices only *************/
 @media (min-width: 992px) and (max-width: 1199px) {
 	/* Header */
@@ -138,31 +183,50 @@ body {
     margin: 20px 15px 10px 0;
 }
 
-
+.jumbotron {
+  background: url('images/resto_992.jpg') no-repeat; 
+  height: 558px;
+  box-shadow: 0 0 50px #3F0C1F;
+  border: 2px solid #3F0C1F;
+  }
+}
 /*********************** Small devices only **************/
 @media (min-width: 768px) and (max-width: 991px) {
+
+ .jumbotron {
+  background: url('images/resto_768.jpg') no-repeat; 
+  height: 432px;
+  box-shadow: 0 0 50px #3F0C1F;
+  border: 2px solid #3F0C1F;
+ }
+
 }
-
-
 /*********************** Extra small devices only **********/
 @media (min-width: 767px) {
-	/** Header **/
+	/* Header 
 	.nav-brand {
 		padding-top: 10px;
 		height: 80px;
 	}
 
-	.nav-brand h1 {      /*The restaurant name*/
+	.nav-brand h1 {      /*The restaurant name
 		padding-top: 10px;
-		font-size: 5vw; /* 1vw = 1% of viewport width, it is responsive*/
+		font-size: 5vw; /* 1vw = 1% of viewport width, it is responsive
 	}
 
-	.navbar-brand {    /*Kosher certification*/
+	.navbar-brand {    /*Kosher certification
 		font-size: .6em;
 		margin-top: 12px;
 	}
-	.navbar-brand p img {    /*Star-K*/
+	.navbar-brand p img {    /*Star-K
 		height: 20px;
-	}
+	}*/
+
+	.container .jumbotron {
+        margin-top: 30px;
+        box-shadow: 0 0 50px #3F0C1F;
+        border: 2px solid #3F0C1F;
+       
+    }
 }
 
