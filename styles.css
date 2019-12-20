@@ -68,6 +68,7 @@ body {
 
 #nav-list {
   margin-top: 10px;
+  font-weight: bold;
 }
 
 #nav-list a {
@@ -84,6 +85,7 @@ body {
 }
 #phone {
   margin-top: 5px;
+  font-weight: bold;
 }
 #phone a {
   text-align: right; /* Phone number*/
@@ -93,8 +95,13 @@ body {
   color: #557c3e;
   text-align: right;
   padding-right: 15px;
+  font-weight: bold;
 }
 
 .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
    border: 1px solid #61122f;
+}
+
+.navbar-header button..navbar-toggle {
+	clear: both;
 }
