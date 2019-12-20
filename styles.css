@@ -144,6 +144,9 @@ body {
   background-position: center;
 }
 
+#map-tile  {
+
+}
 #menu-tile span, #specials-tile span, #map-tile span  {
   position: absolute;
   bottom: 0;
@@ -228,5 +231,9 @@ body {
         border: 2px solid #3F0C1F;
        
     }
+    /*#menu-tile, #specials-tile {
+    	width: 360px;
+    	margin: 0 auto 15px;
+    }*/
 }
 
