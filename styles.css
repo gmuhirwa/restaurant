@@ -48,10 +48,13 @@ body {
 
 .navbar-brand p {
   color: #000;
-  text-transform: lowercase;
+  /*text-transform: lowercase;
+  text-shadow: 1px 1px 1px maroon;*/
   font-size: 1.2em;
   float: center;
   padding-top: 4px;
+  font-weight: bold;
+  
 }
 
 .navbar-brand p span {
@@ -61,6 +64,7 @@ body {
 
 .kosher {
 	right: 5px;
+
 }
 #pull-left {
   top: 10px;
@@ -102,6 +106,63 @@ body {
    border: 1px solid #61122f;
 }
 
-.navbar-header button..navbar-toggle {
+.navbar-header button.navbar-toggle {
 	clear: both;
 }
+.nav span {
+	width: 10px;
+	height: 10px;
+}
+.glyphicon {
+	font-size: 20px;
+	float: center;
+}
+/*For the Glyphicon and the Menu to have same size*/
+#collapsable-nav a span {
+	font-size: 1.5em;
+}
+/*THE END O F THE H EADER*/
+
+/*********************** Large devices only **************/
+@media (min-width: 1200px) {
+
+}
+
+/*********************** Medium devices only *************/
+@media (min-width: 992px) and (max-width: 1199px) {
+	/* Header */
+	#logo-img {
+    background: url('images/logo.png') no-repeat;
+    width: 70px;
+    height: 70px;
+    margin: 20px 15px 10px 0;
+}
+
+
+/*********************** Small devices only **************/
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+
+/*********************** Extra small devices only **********/
+@media (min-width: 767px) {
+	/** Header **/
+	.nav-brand {
+		padding-top: 10px;
+		height: 80px;
+	}
+
+	.nav-brand h1 {      /*The restaurant name*/
+		padding-top: 10px;
+		font-size: 5vw; /* 1vw = 1% of viewport width, it is responsive*/
+	}
+
+	.navbar-brand {    /*Kosher certification*/
+		font-size: .6em;
+		margin-top: 12px;
+	}
+	.navbar-brand p img {    /*Star-K*/
+		height: 20px;
+	}
+}
+
