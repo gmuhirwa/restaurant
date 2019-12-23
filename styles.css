@@ -216,6 +216,14 @@ body {
 #menu-tile:hover, #specials-tile:hover, #map-tile:hover {
 	box-shadow: 0 1px 5px 1px #cccccc;
 }
+.btn {
+  text-align: center;
+  background-color: #f6b319;
+  width: 500px;
+  height: 40px;
+  border: 1px solid black;
+  margin: 0 auto 15px;
+}
 
 /****************   END OF HOME PAGE ******************/
 .category-tile {
