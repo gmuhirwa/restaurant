@@ -123,6 +123,18 @@ body {
   border: 1px solid transparent;
   border-radius: 4px;
 }
+.navbar-toggle: focus {
+  outline: 0;
+}
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+.navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
 .nav span {
 	width: 10px;
 	height: 10px;
@@ -239,7 +251,6 @@ body {
 
   .navbar-toggle {
      display: none;
-    }
   }
   .navbar-nav {
     margin: 7.5px -15px;
