@@ -1,3 +1,4 @@
+
 body {
   font-size: 16px;
   color: #fff;
@@ -160,6 +161,7 @@ body {
 /*For the Glyphicon and the Menu to have same size*/
 #collapsable-nav a span {
   font-size: 1.5em;
+  padding-bottom: 30px;
 }
 /*THE END O F THE HEADER*/
 
@@ -204,7 +206,17 @@ body {
   text-overflow: ellipsis;
 }
 
-#menu-tile, #specials-tile, #map-tile {
+#menu-tile, #specials-tile {
+  height: 250px;
+  width: 345px;
+  margin-bottom: 15px;
+  position: relative;
+  border: 2px solid #3F0C1F;
+  overflow: hidden;
+  padding: 10px;
+  display: inline-block;
+}
+#map-tile {
   height: 250px;
   width: 100%;
   margin-bottom: 15px;
@@ -258,7 +270,7 @@ body {
   padding-top: 12px;
   border: 1px solid black;
   margin: 0 auto;
-  vertical-align: middle; 
+   
  }
 
 /****************   END OF HOME PAGE ******************/
@@ -350,6 +362,10 @@ h3.menu-item-title {
   padding: 0;
 
 }
+.row #testimonials {
+  max-width: 170px;
+}
+
 /*********************** Large devices only **************/
 @media (min-width: 1200px) {
   .jumbotron {
@@ -446,9 +462,9 @@ h3.menu-item-title {
 
       /*******  Home Page *******/
   #menu-tile, #specials-tile {
-    width: 280px;
+    max-width: 370px;
     margin: 0 auto 15px;
-    padding: 0;
+    padding: 0 auto;
   }
 
   .col-xxs-12 {
