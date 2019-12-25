@@ -93,6 +93,7 @@ body {
 #phone {
   margin-top: 5px;
   font-weight: bold;
+
 }
 
 #phone a {
@@ -342,6 +343,10 @@ h3.menu-item-title {
   font-size: .9em;
   font-style: italic;
 }
+.container .jumbotron {
+  padding: 0;
+
+}
 /*********************** Large devices only **************/
 @media (min-width: 1200px) {
   .jumbotron {
@@ -356,7 +361,7 @@ h3.menu-item-title {
 @media (min-width: 992px) and (max-width: 1199px) {
   /* Header */
   #logo-img {
-    background: url('images/resto_992.png') no-repeat;
+    background: url('images/logo.png') no-repeat;
     width: 70px;
     height: 70px;
     margin: 20px 15px 10px 0;
@@ -373,11 +378,10 @@ h3.menu-item-title {
   text-overflow: ellipsis;
   max-width: 300px; 
   margin: 0 auto;
-
-
+  background-size: auto 100%;
 }
 /*********************** Small devices only **************/
-@media (min-width: 760px) and (max-width: 1000px) {
+@media (min-width: 768px) and (max-width: 991px) {
 
   .navbar-toggle {
     display: none;
@@ -392,22 +396,13 @@ h3.menu-item-title {
     padding-bottom: 10px;
     line-height: 20px;
   }
-
-  .jumbotron {
-    background: url('images/resto_768.jpg') no-repeat;
-    height: 432px;
-    width: 100%;
-    box-shadow: 0 0 50px #3F0C1F;
-    border: 2px solid #3F0C1F;
-  }
   #testimonials {
   font-style: italic;
   text-overflow: ellipsis;
-  max-width: 400px; 
+  max-width: 200px; 
   margin: 0 auto;
-
-}
-/*********************** Extra small devices only **********/
+  }
+  /*********************** Extra small devices only **********/
 @media (min-width: 427px) and (max-width: 767px) {
  
  .panel-footer section {
@@ -443,7 +438,6 @@ h3.menu-item-title {
   .menu-item-description {
     text-align: center;
   }
-  
   /************* Super extra small devicesOnly e.g., iPhone 4 *******/
   @media (max-width: 430px) {
       /******* Header ********/
@@ -467,6 +461,5 @@ h3.menu-item-title {
     float: left;
     width: 100%;
   }
-
 }
 
