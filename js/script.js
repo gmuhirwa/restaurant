@@ -8,9 +8,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
     }
   });
 
-  /*// Just in case it does not work.... add this!
-  $("#navbarToggle").click(function (event) {
+    $("#navbarToggle").click(function (event) {
     $(event.target).focus();
   });
 });
-*/
