@@ -1,4 +1,3 @@
-
 body {
   font-size: 16px;
   color: #fff;
@@ -463,7 +462,7 @@ h3.menu-item-title {
   @media (max-width: 430px) {
       /******* Header ********/
     .navbar-brand h1 {  //**** Restaurant name *****/
-        padding-top: 5px;
+    padding-top: 5px;
     font-size: 6vw;
   } /****** End of Header ******/
 
@@ -483,4 +482,3 @@ h3.menu-item-title {
     width: 100%;
   }
 }
-
