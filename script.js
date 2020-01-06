@@ -59,7 +59,16 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
     showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
       allCategoriesUrl,
-      buildAndShowCategoriesHTML, true);  // true is default
+      buildAndShowCategoriesHTML, true);  // true is default, can be left out.
+  };
+
+  // Load the menu items view
+  // 'category' is a short_name for a category
+  dc.loadMenuItems = function (categoryShort) {
+    showLoading("#main-content");
+    $ajaxUtils.sendGetRequest(
+      menuItemsUrl + categoryShort,
+      buildAndShowCategoriesHTML, false);  // false is default, can be left out.
   };
 
   // Builds HTML for the categories page based on the data
@@ -106,5 +115,126 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
     finalHtml += "</section>";
     return finalHtml;
   }
+
+// Builds HTML for the categories page based on the data
+  // from the server
+  function buildShowMenuItemsHTML (categoriesMenuItems) {
+    // Load title snippet of categories page
+    $ajaxUtils.sendgetRequest(
+      categoriesTitleHtml,
+      function (menuItemsTitleHtml) {
+        // Retrieve single menu item snippet
+        $ajaxUtils.sendgetRequest(
+          menuItemHtml,
+          function (menuItemHtml) {
+            var menuItemsViewHtml = buildMenuItemsViewHTML (categorymenuItems,
+                                                              menuItemsTitleHtml,
+                                                              menuItemHtml);
+            insertHtml("#main-content", menuItemViewHtml);
+          },
+          false);
+      },
+      false);
+    }
+
+
+// Using category and menu items data and snippets html
+// build menu items view HTML to be inserted into page
+function buildMenuItemsViewHtml(categoryMenuItems,
+                                menuItemsTitleHtml,
+                                menuItemHtml) {
+
+  menuItemsTitleHtml =
+    insertProperty(menuItemsTitleHtml,
+                   "name",
+                   categoryMenuItems.category.name);
+  menuItemsTitleHtml =
+    insertProperty(menuItemsTitleHtml,
+                   "special_instructions",
+                   categoryMenuItems.category.special_instructions);
+
+  var finalHtml = menuItemsTitleHtml;
+  finalHtml += "<section class='row'>";
+
+  // Loop over menu items
+  var menuItems = categoryMenuItems.menu_items;
+  var catShortName = categoryMenuItems.category.short_name;
+  for (var i = 0; i < menuItems.length; i++) {
+    // Insert menu item values
+    var html = menuItemHtml;
+    html =
+      insertProperty(html, "short_name", menuItems[i].short_name);
+    html =
+      insertProperty(html,
+                     "catShortName",
+                     catShortName);
+    html =
+      insertItemPrice(html,
+                      "price_small",
+                      menuItems[i].price_small);
+    html =
+      insertItemPortionName(html,
+                            "small_portion_name",
+                            menuItems[i].small_portion_name);
+    html =
+      insertItemPrice(html,
+                      "price_large",
+                      menuItems[i].price_large);
+    html =
+      insertItemPortionName(html,
+                            "large_portion_name",
+                            menuItems[i].large_portion_name);
+    html =
+      insertProperty(html,
+                     "name",
+                     menuItems[i].name);
+    html =
+      insertProperty(html,
+                     "description",
+                     menuItems[i].description);
+
+    // Add clearfix after every second menu item
+    if (i % 2 != 0) {
+      html +=
+        "<div class='clearfix visible-lg-block visible-md-block'></div>";
+    }
+
+    finalHtml += html;
+  }
+
+  finalHtml += "</section>";
+  return finalHtml;
+}
+
+
+// Appends price with '$' if price exists
+function insertItemPrice(html,
+                         pricePropName,
+                         priceValue) {
+  // If not specified, replace with empty string
+  if (!priceValue) {
+    return insertProperty(html, pricePropName, "");;
+  }
+
+  priceValue = "$" + priceValue.toFixed(2);
+  html = insertProperty(html, pricePropName, priceValue);
+  return html;
+}
+
+
+// Appends portion name in parens if it exists
+function insertItemPortionName(html,
+                               portionPropName,
+                               portionValue) {
+  // If not specified, return original string
+  if (!portionValue) {
+    return insertProperty(html, portionPropName, "");
+  }
+
+  portionValue = "(" + portionValue + ")";
+  html = insertProperty(html, portionPropName, portionValue);
+  return html;
+}
+
   global.$dc = dc;   // Resto short name
-  }) (window);
+}) (window);
